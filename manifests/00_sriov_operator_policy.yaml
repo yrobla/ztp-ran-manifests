@@ -5,7 +5,7 @@ metadata:
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
-    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration 
+    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
 spec:
   remediationAction: enforce
   disabled: false
@@ -45,7 +45,7 @@ spec:
                 apiVersion: operators.coreos.com/v1
                 kind: OperatorGroup
                 metadata:
-                  name: sriov-network-operator
+                  name: sriov-network-operators
                   namespace: openshift-sriov-network-operator
                 spec:
                   targetNamespaces:
@@ -71,7 +71,31 @@ spec:
                   namespace: openshift-sriov-network-operator
                 spec:
                   channel: "4.6"
-                  installPlanApproval: Automatic
                   name: sriov-network-operator
-                  source: performance-addon-operator
+                  source: redhat-operators
                   sourceNamespace: openshift-marketplace
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-sriov
+placementRef:
+  name: placement-policy-sriov
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-sriov-operator
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-sriov
+spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions:
+      - {key: profile, operator: In, values: [cu, du]}
