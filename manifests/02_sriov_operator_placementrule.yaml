@@ -8,4 +8,4 @@ spec:
     type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - {key: sriov, operator: In, values: ["true"]}
+      - {key: profile, operator: In, values: [cu, du]}
