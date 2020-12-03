@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: sample-spoke-cluster
+  name: sample-du-cluster
 ---
 apiVersion: cluster.open-cluster-management.io/v1
 kind: ManagedCluster
@@ -9,19 +9,20 @@ metadata:
   labels:
     cloud: auto-detect
     vendor: auto-detect
-    name: sample-spoke-cluster
-  name: sample-spoke-cluster
+    name: sample-du-cluster
+    profile: du
+  name: sample-du-cluster
 spec:
   hubAcceptsClient: true
 ---
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: sample-spoke-cluster
-  namespace: sample-spoke-cluster
+  name: sample-du-cluster
+  namespace: sample-du-cluster
 spec:
-  clusterName: sample-spoke-cluster
-  clusterNamespace: sample-spoke-cluster
+  clusterName: sample-du-cluster
+  clusterNamespace: sample-du-cluster
   clusterLabels:
     cloud: auto-detect
     vendor: auto-detect
