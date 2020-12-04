@@ -1,12 +1,12 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-sriov
+  name: binding-policy-mcp-du
 placementRef:
-  name: placement-policy-sriov
+  name: placement-policy-mcp-du
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-sriov-operator
+- name: policy-mcp-du
   kind: Policy
   apiGroup: policy.open-cluster-management.io

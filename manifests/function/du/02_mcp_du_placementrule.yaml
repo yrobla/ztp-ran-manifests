@@ -1,11 +1,11 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-sriov
+  name: placement-policy-mcp-du
 spec:
   clusterConditions:
   - status: "True"
     type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - {key: profile, operator: In, values: [cu, du]}
+      - {key: profile, operator: In, values: [du]}

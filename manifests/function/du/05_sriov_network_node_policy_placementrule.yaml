@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-ptp
+  name: placement-policy-du-sriov-network-node-policy
 spec:
   clusterConditions:
   - status: "True"
