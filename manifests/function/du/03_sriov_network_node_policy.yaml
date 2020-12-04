@@ -48,7 +48,7 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
-                apiVersion: operator.openshift.io/v1
+                apiVersion: sriovnetwork.openshift.io/v1
                 kind: SriovNetworkNodePolicy
                 metadata:
                   name: du-network-node-policy
