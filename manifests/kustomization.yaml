@@ -7,3 +7,6 @@ resources:
   - 03_pao_operator_policy.yaml
   - 04_pao_operator_placementbinding.yaml
   - 05_pao_operator_placementrule.yaml
+  - 06_ptp_operator_policy.yaml
+  - 07_ptp_operator_placementbinding.yaml
+  - 08_ptp_operator_placementrule.yaml
