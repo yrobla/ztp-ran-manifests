@@ -33,7 +33,7 @@ spec:
                   enableInjector: true
                   enableOperatorWebhook: true
                   configDaemonNodeSelector:
-                    "node-role.kubernetes.io/worker-du": ""
+                    "node-role.kubernetes.io/worker": ""
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
@@ -60,7 +60,7 @@ spec:
                     pfNames:
                       - eno2
                   nodeSelector:
-                    node-role.kubernetes.io/worker-du: ""
+                    node-role.kubernetes.io/worker: ""
                   numVfs: 5
                   priority: 10
                   resourceName: dpdknic

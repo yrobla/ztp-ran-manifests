@@ -36,7 +36,7 @@ spec:
                     matchExpressions:
                       - key: machineconfiguration.openshift.io/role
                         operator: In
-                        values: [worker,worker-du]
+                        values: [worker]
                   nodeSelector:
                     matchLabels:
-                      node-role.kubernetes.io/worker-du: ""
+                      node-role.kubernetes.io/worker: ""
