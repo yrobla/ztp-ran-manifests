@@ -4,3 +4,6 @@ resources:
   - 00_sriov_operator_policy.yaml
   - 01_sriov_operator_placementbinding.yaml
   - 02_sriov_operator_placementrule.yaml
+  - 03_pao_operator_policy.yaml
+  - 04_pao_operator_placementbinding.yaml
+  - 05_pao_operator_placementrule.yaml
