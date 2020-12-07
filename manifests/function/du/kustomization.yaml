@@ -7,4 +7,7 @@ resources:
   - 03_sriov_network_node_policy.yaml
   - 04_sriov_network_node_policy_placementbinding.yaml
   - 05_sriov_network_node_policy_placementrule.yaml
+  - 06_performance_profile_policy.yaml
+  - 07_performance_profile_placementbinding.yaml
+  - 08_performance_profile_placementrule.yaml
 
