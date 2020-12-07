@@ -10,4 +10,7 @@ resources:
   - 06_performance_profile_policy.yaml
   - 07_performance_profile_placementbinding.yaml
   - 08_performance_profile_placementrule.yaml
+  - 09_slave_ptp_policy.yaml
+  - 10_slave_ptp_placementbinding.yaml
+  - 11_slave_ptp_placementrule.yaml
 
