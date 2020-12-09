@@ -54,11 +54,11 @@ spec:
                   name: du-network-node-policy
                   namespace: openshift-sriov-network-operator
                 spec:
-                  deviceType: netdevice
-                  isRdma: true
+                  deviceType: vfio-pci
+                  isRdma: false
                   nicSelector:
                     pfNames:
-                      - eno2
+                      - ens1f0
                   nodeSelector:
                     node-role.kubernetes.io/worker: ""
                   numVfs: 5
