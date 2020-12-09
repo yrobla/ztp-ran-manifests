@@ -13,4 +13,7 @@ resources:
   - 09_slave_ptp_policy.yaml
   - 10_slave_ptp_placementbinding.yaml
   - 11_slave_ptp_placementrule.yaml
+  - 12_sctp_module_policy.yaml
+  - 13_sctp_module_placementbinding.yaml
+  - 14_sctp_module_placementrule.yaml
 
