@@ -72,8 +72,8 @@ spec:
                 kind: Deployment
                 metadata:
                   name: autolabeller
-                labels:
-                  app: autolabeller
+                  labels:
+                    app: autolabeller
                 spec:
                   replicas: 1
                   selector:
@@ -105,8 +105,8 @@ spec:
                 kind: Deployment
                 metadata:
                   name: autosigner
-                labels:
-                  app: autosigner
+                  labels:
+                    app: autosigner
                 spec:
                   replicas: 1
                   selector:
