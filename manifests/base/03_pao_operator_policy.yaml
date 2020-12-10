@@ -28,6 +28,9 @@ spec:
                 kind: Namespace # must have openshift-pao
                 metadata:
                   name: openshift-performance-addon
+                  labels:
+                    openshift-io/cluster-monitoring: "true"
+                    name: openshift-performance-addon
                 spec: {}
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
