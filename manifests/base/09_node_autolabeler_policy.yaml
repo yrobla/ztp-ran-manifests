@@ -79,14 +79,14 @@ spec:
                   selector:
                     matchLabels:
                       app: autolabeller
-                template:
-                  metadata:
-                    labels:
-                      app: autolabeller
-                  spec:
-                    containers:
-                    - name: autolabeller
-                      image: quay.io/karmab/autolabeller:latest
+                  template:
+                    metadata:
+                      labels:
+                        app: autolabeller
+                    spec:
+                      containers:
+                      - name: autolabeller
+                        image: quay.io/karmab/autolabeller:latest
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
