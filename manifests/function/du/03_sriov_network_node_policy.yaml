@@ -61,6 +61,51 @@ spec:
                       - ens1f0
                   nodeSelector:
                     node-role.kubernetes.io/worker: ""
+                    feature.node.kubernetes.io/network-sriov.capable: "true"
                   numVfs: 5
                   priority: 10
                   resourceName: dpdknic
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: policy-sriov-operatorconfig-du
+        spec:
+          remediationAction: inform # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
+          severity: low
+          namespaceSelector:
+            exclude: ["kube-*"]
+            include: ["*"]
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetwork
+                metadata:
+                  name: mh-net-u-site-1
+                  namespace: openshift-sriov-network-operator
+                spec:
+                  ipam:  |
+                    {
+                    }
+                  networkNamespace: mh-net-ns-site-1
+                  resourceName: dpdknic
+                  vlan: 100
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: policy-sriov-ns
+        spec:
+          remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
+          severity: low
+          namespaceSelector:
+            exclude: ["kube-*"]
+            include: ["*"]
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                    name: mh-net-ns-site-1

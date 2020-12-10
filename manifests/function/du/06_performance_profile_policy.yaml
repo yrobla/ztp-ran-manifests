@@ -27,7 +27,7 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
-                apiVersion: performance.openshift.io/v1alpha1
+                apiVersion: performance.openshift.io/v1
                 kind: PerformanceProfile
                 metadata:
                   name: performance
@@ -45,5 +45,7 @@ spec:
                         node: 0
                   nodeSelector:
                     node-role.kubernetes.io/worker: ''
+                  numa:
+                    topologyPolicy: "restricted"
                   realTimeKernel:
                     enabled: true

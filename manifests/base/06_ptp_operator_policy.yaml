@@ -28,6 +28,9 @@ spec:
                 kind: Namespace # must have openshift-ptp
                 metadata:
                   name: openshift-ptp
+                  labels:
+                    openshift.io/run-level: "1"
+                    openshift.io/cluster-monitoring: "true"
                 spec: {}
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1

@@ -28,6 +28,8 @@ spec:
                 kind: Namespace 
                 metadata:
                   name: openshift-sriov-network-operator
+                  labels:
+                    openshift.io/run-level: "1"
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
