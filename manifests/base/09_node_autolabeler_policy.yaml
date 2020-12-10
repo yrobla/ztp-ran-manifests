@@ -87,3 +87,36 @@ spec:
                     containers:
                     - name: autolabeller
                       image: quay.io/karmab/autolabeller:latest
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: policy-node-autolabeler-deployment-signer
+        spec:
+          remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
+          severity: low
+          namespaceSelector:
+            exclude: ["kube-*"]
+            include: ["*"]
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: apps/v1
+                kind: Deployment
+                metadata:
+                  name: autosigner
+                labels:
+                  app: autosigner
+                spec:
+                  replicas: 1
+                  selector:
+                    matchLabels:
+                      app: autosigner
+                  template:
+                    metadata:
+                      labels:
+                        app: autosigner
+                    spec:
+                      containers:
+                      - name: autosigner
+                        image: quay.io/karmab/autosigner:latest
