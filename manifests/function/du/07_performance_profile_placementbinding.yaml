@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-du-performance-addon-policy
+  namespace: du-subscriptions
 placementRef:
   name: placement-policy-du-performance-addon-policy
   kind: PlacementRule

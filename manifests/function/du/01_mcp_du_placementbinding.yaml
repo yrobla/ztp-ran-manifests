@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-mcp-du
+  namespace: du-subscriptions
 placementRef:
   name: placement-policy-mcp-du
   kind: PlacementRule
