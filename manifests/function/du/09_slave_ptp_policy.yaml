@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-config-slave-ptp-du
+          name: policy-config-slave-ptp-du-slave
         spec:
           remediationAction: inform
           severity: low
