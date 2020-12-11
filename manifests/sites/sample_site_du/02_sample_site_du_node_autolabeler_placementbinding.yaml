@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-sample-site-du-policy-node-autolabeler
+  namespace: sample-site-du-subscription
 placementRef:
   name: placement-sample-site-du-policy-node-autolabeler
   kind: PlacementRule
