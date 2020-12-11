@@ -31,6 +31,7 @@ spec:
                 kind: PtpConfig
                 metadata:
                   name: du-slave
+                  namespace: openshift-ptp
                 spec:
                   profile:
                   - name: "slave"
