@@ -61,7 +61,6 @@ spec:
                       - ens1f0
                   nodeSelector:
                     node-role.kubernetes.io/worker: ""
-                    feature.node.kubernetes.io/network-sriov.capable: "true"
                   numVfs: 5
                   priority: 10
                   resourceName: dpdknic
