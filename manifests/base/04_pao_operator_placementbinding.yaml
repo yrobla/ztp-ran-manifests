@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-pao
+  namespace: ran-subscriptions
 placementRef:
   name: placement-policy-pao
   kind: PlacementRule
