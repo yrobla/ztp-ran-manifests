@@ -44,7 +44,7 @@ spec:
                         count: 8
                         node: 0
                   nodeSelector:
-                    node-role.kubernetes.io/worker: ''
+                    node-role.kubernetes.io/worker-du: ''
                   numa:
                     topologyPolicy: "restricted"
                   realTimeKernel:
