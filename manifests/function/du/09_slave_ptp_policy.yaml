@@ -27,19 +27,23 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
-                apiVersion: performance.openshift.io/v1alpha1
+                apiVersion: ptp.openshift.io/v1
                 kind: PtpConfig
                 metadata:
-                  name: du-slave
+                  name: slave
                   namespace: openshift-ptp
                 spec:
                   profile:
                   - name: "slave"
-                    interface: "ens1f0"
+                    # The interface name is hardware-specific  
+                    interface: "eno1"
                     ptp4lOpts: "-2 -s --summary_interval -4"
                     phc2sysOpts: "-a -r -n 24"
                     ptp4lConf: |
                       [global]
+                      #
+                      # Default Data Set
+                      #
                       twoStepFlag 1
                       slaveOnly 0
                       priority1 128
@@ -87,7 +91,7 @@ spec:
                       use_syslog 1
                       verbose 0
                       summary_interval 0
-                      kernel_leap 1 
+                      kernel_leap 1
                       check_fup_sync 0
                       #
                       # Servo Options
