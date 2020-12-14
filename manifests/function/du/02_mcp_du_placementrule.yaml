@@ -4,7 +4,6 @@ metadata:
   name: placement-policy-mcp-du
   namespace: du-subscriptions
 spec:
-  clusterConditions:
   clusterSelector:
     matchExpressions:
       - {key: profile, operator: In, values: [du]}

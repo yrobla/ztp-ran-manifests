@@ -4,7 +4,6 @@ metadata:
   name: placement-policy-sample-site-du-sriov-network-node-policy
   namespace: sample-site-du-subscription
 spec:
-  clusterConditions:
   clusterSelector:
     matchExpressions:
       - {key: name, operator: In, values: ["sample-du-cluster"]}

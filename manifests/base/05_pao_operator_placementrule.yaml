@@ -4,7 +4,6 @@ metadata:
   name: placement-policy-pao
   namespace: ran-subscriptions
 spec:
-  clusterConditions:
   clusterSelector:
     matchExpressions:
       - {key: profile, operator: In, values: [cu, du]}

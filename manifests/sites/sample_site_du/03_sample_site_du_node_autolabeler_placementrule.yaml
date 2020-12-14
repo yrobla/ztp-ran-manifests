@@ -4,7 +4,6 @@ metadata:
   name: placement-sample-site-du-policy-node-autolabeler
   namespace: sample-site-du-subscription
 spec:
-  clusterConditions:
   clusterSelector:
     matchExpressions:
       - {key: name, operator: In, values: ["sample-du-cluster"]}
