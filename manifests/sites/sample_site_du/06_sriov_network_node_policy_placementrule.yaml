@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-sample-site-du-sriov-network-node-policy
+  name: placement-sample-site-du-sriov-nnode-policy
   namespace: sample-site-du-subscription
 spec:
   clusterSelector:
