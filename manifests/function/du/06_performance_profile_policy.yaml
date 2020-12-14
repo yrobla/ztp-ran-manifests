@@ -41,11 +41,11 @@ spec:
                     defaultHugepagesSize: 1G
                     pages:
                       - size: "1G"
-                        count: 8
+                        count: 16
                         node: 0
                   nodeSelector:
                     node-role.kubernetes.io/worker-du: ''
                   numa:
                     topologyPolicy: "restricted"
                   realTimeKernel:
-                    enabled: false
+                    enabled: true
