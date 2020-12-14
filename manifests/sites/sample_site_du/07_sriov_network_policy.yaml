@@ -49,7 +49,7 @@ spec:
                 kind: SriovNetwork
                 metadata:
                   name: mh-net-u-site-1-fqdn-worker1
-                  namespace: openshift-sriov-network-operator
+                  namespace: mh-net-ns-site-1-fqdn-worker1
                 spec:
                   ipam:  |
                     {
