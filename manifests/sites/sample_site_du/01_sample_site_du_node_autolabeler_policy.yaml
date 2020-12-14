@@ -16,7 +16,6 @@ spec:
         kind: ConfigurationPolicy
         metadata:
           name: sample-site-du-policy-node-autolabeler-config
-          namespace: sample-site-du-subscription
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
