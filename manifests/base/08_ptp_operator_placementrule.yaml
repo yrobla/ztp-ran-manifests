@@ -5,8 +5,6 @@ metadata:
   namespace: ran-subscriptions
 spec:
   clusterConditions:
-  - status: "True"
-    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
       - {key: profile, operator: In, values: [du]}
