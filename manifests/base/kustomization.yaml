@@ -7,9 +7,6 @@ resources:
   - 03_pao_operator_policy.yaml
   - 04_pao_operator_placementbinding.yaml
   - 05_pao_operator_placementrule.yaml
-  - 06_ptp_operator_policy.yaml
-  - 07_ptp_operator_placementbinding.yaml
-  - 08_ptp_operator_placementrule.yaml
   - 09_node_autolabeler_policy.yaml
   - 10_node_autolabeler_placementbinding.yaml
   - 11_node_autolabeler_placementrule.yaml
