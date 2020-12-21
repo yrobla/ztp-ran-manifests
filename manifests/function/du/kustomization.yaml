@@ -22,3 +22,6 @@ resources:
   - 15_rt_kernel_hack.yaml
   - 16_rt_kernel_placementbinding.yaml
   - 17_rt_kernel_placementrule.yaml
+  - 18_disable_chronyd_policy.yaml
+  - 19_disable_chronyd_placementbinding.yaml
+  - 20_disable_chronyd_placementrule.yaml
