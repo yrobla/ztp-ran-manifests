@@ -13,6 +13,3 @@ resources:
   - 12_sctp_module_policy.yaml
   - 13_sctp_module_placementbinding.yaml
   - 14_sctp_module_placementrule.yaml
-  - 15_rt_kernel_hack.yaml
-  - 16_rt_kernel_placementbinding.yaml
-  - 17_rt_kernel_placementrule.yaml

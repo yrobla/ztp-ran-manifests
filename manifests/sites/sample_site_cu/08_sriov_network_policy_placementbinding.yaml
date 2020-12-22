@@ -1,13 +1,13 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-sample-site-du-sriov-network
-  namespace: sample-site-du-subscription
+  name: binding-policy-sample-site-cu-sriov-network
+  namespace: sample-site-cu-subscription
 placementRef:
-  name: placement-policy-sample-site-du-sriov-network
+  name: placement-policy-sample-site-cu-sriov-network
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-sample-site-du-sriov-network
+- name: policy-sample-site-cu-sriov-network
   kind: Policy
   apiGroup: policy.open-cluster-management.io

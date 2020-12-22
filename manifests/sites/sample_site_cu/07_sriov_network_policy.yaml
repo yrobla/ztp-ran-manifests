@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-sample-site-du-sriov-network
-  namespace: sample-site-du-subscription
+  name: policy-sample-site-cu-sriov-network
+  namespace: sample-site-cu-subscription
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-sample-site-du-sriov-network-namespace
+          name: policy-sample-site-cu-network-namespace
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -28,12 +28,12 @@ spec:
                 apiVersion: v1
                 kind: Namespace
                 metadata:
-                    name: mh-net-ns-site-1-fqdn-worker1
+                    name: site-cu-network-namespace
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-sample-site-du-sriov-network
+          name: policy-sample-site-cu-network
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -46,12 +46,54 @@ spec:
                 apiVersion: sriovnetwork.openshift.io/v1
                 kind: SriovNetwork
                 metadata:
-                  name: mh-net-u-site-1-fqdn-worker1
-                  namespace: mh-net-ns-site-1-fqdn-worker1
+                  name: sriov-nw-cu-up-numa0-bh
+                  namespace: site-cu-network-namespace
                 spec:
                   ipam:  |
                     {
                     }
-                  networkNamespace: mh-net-ns-site-1-fqdn-worker1
-                  resourceName: mh_u_site_1_fqdn_worker1
-                  vlan: 200
+                  networkNamespace: site-cu-network-namespace
+                  resourceName: cu_up_bh_n0
+                  vlan: 142
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetwork
+                metadata:
+                  name: sriov-nw-cu-up-numa0-mh
+                  namespace: site-cu-network-namespace
+                spec:
+                  ipam:  |
+                    {
+                    }
+                  networkNamespace: site-cu-network-namespace
+                  resourceName: cu_up_mh_n0
+                  vlan: 101
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetwork
+                metadata:
+                  name: sriov-nw-cu-up-numa1-bh
+                  namespace: site-cu-network-namespace
+                spec:
+                  ipam:  |
+                    {
+                    }
+                  networkNamespace: site-cu-network-namespace
+                  resourceName: cu_up_bh_n1
+                  vlan: 142
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetwork
+                metadata:
+                  name: sriov-nw-cu-up-numa1-mh
+                  namespace: site-cu-network-namespace
+                spec:
+                  ipam:  |
+                    {
+                    }
+                  networkNamespace: site-cu-up-network-namespace
+                  resourceName: cu_up_mh_n1
+                  vlan: 101
