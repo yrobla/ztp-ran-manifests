@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-sctp-module-du
-  namespace: du-subscriptions
+  name: policy-sctp-module-cu
+  namespace: cu-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-sctp-module-du
+          name: policy-sctp-module-cu
         spec:
           remediationAction: inform
           severity: low
@@ -31,7 +31,7 @@ spec:
                 kind: MachineConfig
                 metadata:
                   labels:
-                    machineconfiguration.openshift.io/role: worker-du
+                    machineconfiguration.openshift.io/role: worker-cu
                   name: load-sctp-module
                 spec:
                   config:
