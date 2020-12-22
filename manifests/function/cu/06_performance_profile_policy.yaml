@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-config-performanceprofile-du
+          name: policy-config-performanceprofile-cu
         spec:
           remediationAction: inform
           severity: low

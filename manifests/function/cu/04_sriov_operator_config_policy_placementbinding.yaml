@@ -2,7 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-cu-sriov-operator-config
-  namespace: du-subscriptions
+  namespace: cu-subscriptions
 placementRef:
   name: placement-policy-cu-sriov-operator-config
   kind: PlacementRule

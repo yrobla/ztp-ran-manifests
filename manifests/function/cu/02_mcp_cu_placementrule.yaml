@@ -1,9 +1,9 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-mcp-du
-  namespace: du-subscriptions
+  name: placement-policy-mcp-cu
+  namespace: cu-subscriptions
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: profile, operator: In, values: [du]}
+      - {key: profile, operator: In, values: [cu]}

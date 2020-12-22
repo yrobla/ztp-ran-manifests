@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-workerdu-mcp
+          name: policy-workercu-mcp
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -28,15 +28,15 @@ spec:
                 apiVersion: machineconfiguration.openshift.io/v1
                 kind: MachineConfigPool
                 metadata:
-                  name: worker-du
+                  name: worker-cu
                   labels:
-                    machineconfiguration.openshift.io/role: worker-du
+                    machineconfiguration.openshift.io/role: worker-cu
                 spec:
                   machineConfigSelector:
                     matchExpressions:
                       - key: machineconfiguration.openshift.io/role
                         operator: In
-                        values: [worker, worker-du]
+                        values: [worker, worker-cu]
                   nodeSelector:
                     matchLabels:
-                      node-role.kubernetes.io/worker-du: ""
+                      node-role.kubernetes.io/worker-cu: ""
