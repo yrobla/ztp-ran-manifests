@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-config-rt-kernel-du
-  namespace: du-subscriptions
+  name: policy-config-rt-kernel-cu
+  namespace: cu-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-config-rt-kernel-du
+          name: policy-config-rt-kernel-cu
         spec:
           remediationAction: inform
           severity: low
@@ -86,7 +86,7 @@ spec:
                     spec:
                       hostNetwork: true
                       nodeSelector:
-                        node-role.kubernetes.io/worker-du: ""
+                        node-role.kubernetes.io/worker-cu: ""
                       containers:
                       - name: rtos-loader
                         image: ubi8/ubi-minimal

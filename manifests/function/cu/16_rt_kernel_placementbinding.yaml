@@ -1,13 +1,13 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-du-rt-kernel-policy
-  namespace: du-subscriptions
+  name: binding-policy-cu-rt-kernel-policy
+  namespace: cu-subscriptions
 placementRef:
-  name: placement-policy-du-rt-kernel-policy
+  name: placement-policy-cu-rt-kernel-policy
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-config-rt-kernel-du
+- name: policy-config-rt-kernel-cu
   kind: Policy
   apiGroup: policy.open-cluster-management.io
