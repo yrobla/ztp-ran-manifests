@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: sample-site-du-sriov-nnode-policy
-  namespace: sample-site-du-subscription
+  name: sample-site-cu-sriov-nnode-policy
+  namespace: sample-site-cu-subscription
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: sample-site-du-sriov-nnode-policy-config
+          name: sample-site-cu-sriov-nnode-policy-config
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -28,7 +28,7 @@ spec:
                 apiVersion: sriovnetwork.openshift.io/v1
                 kind: SriovNetworkNodePolicy
                 metadata:
-                  name: policy-mh-dpdk-site-1-fqdn-worker1
+                  name: policy-sriov-nnp-cu-up-numa0-bh
                   namespace: openshift-sriov-network-operator
                 spec:
                   # This works for Intel based NICs.
@@ -39,9 +39,72 @@ spec:
                   isRdma: false
                   nicSelector:
                     # The exact physical function name must match the hardware used    
+                    pfNames: ["ens1f0"]
+                  nodeSelector:
+                    node-role.kubernetes.io/worker-cu: ""
+                  numVfs: 5
+                  priority: 10
+                  resourceName: cu_up_bh_n0
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetworkNodePolicy
+                metadata:
+                  name: sriov-nnp-cu-up-numa0-mh
+                  namespace: openshift-sriov-network-operator
+                spec:
+                # This works for Intel based NICs.
+                # For Mellanox please change to:
+                #     deviceType: netdevice
+                #     isRdma: true
+                  deviceType: vfio-pci
+                  isRdma: false
+                  nicSelector:
                     pfNames: ["ens1f1"]
                   nodeSelector:
-                    node-role.kubernetes.io/worker-du: ""
-                  numVfs: 4
+                    node-role.kubernetes.io/worker-cu: ""
+                  numVfs: 5
                   priority: 10
-                  resourceName: mh_u_site_1_fqdn_worker1
+                  resourceName: cu_up_mh_n0
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetworkNodePolicy
+                metadata:
+                  name: sriov-nnp-cu-up-numa1-bh
+                  namespace: openshift-sriov-network-operator
+                spec:
+                # This works for Intel based NICs.
+                # For Mellanox please change to:
+                #     deviceType: netdevice
+                #     isRdma: true
+                  deviceType: vfio-pci
+                  isRdma: false
+                  nicSelector:
+                    pfNames: ["ens3f0"]
+                  nodeSelector:
+                    node-role.kubernetes.io/worker-cu: ""
+                  numVfs: 5
+                  priority: 10
+                  resourceName: cu_up_bh_n1
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: sriovnetwork.openshift.io/v1
+                kind: SriovNetworkNodePolicy
+                metadata:
+                  name: sriov-nnp-cu-up-numa1-mh
+                  namespace: openshift-sriov-network-operator
+                spec:
+                # This works for Intel based NICs.
+                # For Mellanox please change to:
+                #     deviceType: netdevice
+                #     isRdma: true
+                  deviceType: vfio-pci
+                  isRdma: false
+                  nicSelector:
+                    pfNames: ["ens3f1"]
+                  nodeSelector:
+                    node-role.kubernetes.io/worker-cu: ""
+                  numVfs: 5
+                  priority: 10
+                  resourceName: cu_up_mh_n1                
