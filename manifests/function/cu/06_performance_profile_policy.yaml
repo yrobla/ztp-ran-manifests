@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-config-performanceprofile-du
-  namespace: du-subscriptions
+  name: policy-config-performanceprofile-cu
+  namespace: cu-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -44,7 +44,7 @@ spec:
                         count: 16
                         node: 0
                   nodeSelector:
-                    node-role.kubernetes.io/worker-du: ''
+                    node-role.kubernetes.io/worker-cu: ''
                   numa:
                     topologyPolicy: "restricted"
                   realTimeKernel:
