@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-sample-site-du-autolabeler
+  namespace: sample-site-du-subscription
+placementRef:
+  name: placement-sample-site-du-autolabeler
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: sample-site-du-autolabeler
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io

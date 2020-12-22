@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - 01_sample_site_cu_node_autolabeler_policy.yaml
+  - 02_sample_site_cu_node_autolabeler_placementbinding.yaml
+  - 03_sample_site_cu_node_autolabeler_placementrule.yaml
+  - 04_sriov_network_node_policy.yaml
+  - 05_sriov_network_node_policy_placementbinding.yaml
+  - 06_sriov_network_node_policy_placementrule.yaml
+  - 07_sriov_network_policy.yaml
+  - 08_sriov_network_policy_placementbinding.yaml
+  - 09_sriov_network_policy_placementrule.yaml
