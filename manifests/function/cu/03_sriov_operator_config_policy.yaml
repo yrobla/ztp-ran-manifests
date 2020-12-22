@@ -1,8 +1,8 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-du-sriov-operator-config
-  namespace: du-subscriptions
+  name: policy-cu-sriov-operator-config
+  namespace: cu-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-sriov-operatorconfig-du
+          name: policy-sriov-operatorconfig-cu
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -34,4 +34,4 @@ spec:
                   enableInjector: true
                   enableOperatorWebhook: true
                   configDaemonNodeSelector:
-                    "node-role.kubernetes.io/worker-du": ""
+                    "node-role.kubernetes.io/worker-cu": ""
