@@ -6,4 +6,4 @@ metadata:
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: name, operator: In, values: ["sample-cu-cluster"]}
+      - {key: name, operator: In, values: ["sample-site-cu-cluster"]}

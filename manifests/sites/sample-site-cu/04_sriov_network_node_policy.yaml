@@ -107,4 +107,4 @@ spec:
                     node-role.kubernetes.io/worker-cu: ""
                   numVfs: 5
                   priority: 10
-                  resourceName: cu_up_mh_n1                
+                  resourceName: cu_up_mh_n1
