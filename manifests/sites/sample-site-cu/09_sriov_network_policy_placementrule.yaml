@@ -1,9 +1,9 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-sample-site-cu-sriov-nnode-policy
+  name: placement-policy-sample-site-cu-sriov-network
   namespace: sample-site-cu-subscription
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: name, operator: In, values: ["sample-cu-cluster"]}
+      - {key: name, operator: In, values: ["sample-site-cu-cluster"]}
