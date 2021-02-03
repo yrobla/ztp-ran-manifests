@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
 CLUSTER_NAME=$1
-profile=$2
+PROFILE=$2
 
-if [ $profile == "cu" ]; then
+if [ $PROFILE == "cu" ]; then
   cp -rf manifests/sites/sample-site-cu manifests/sites/${CLUSTER_NAME}
   sed -i "s/sample-site-cu/$CLUSTER_NAME/g" manifests/sites/${CLUSTER_NAME}/*
-elif [ $profile == "du" ]; then
+elif [ $PROFILE == "du" ]; then
   cp -rf manifests/sites/sample-site-du manifests/sites/${CLUSTER_NAME}
   sed -i "s/sample-site-du/$CLUSTER_NAME/g" manifests/sites/${CLUSTER_NAME}/*
 else
-  echo "Profile should be either cu or du. Profile=" $profile
+  echo "Profile should be either cu or du. Profile=" $PROFILE
   exit 0
 fi
 
