@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00_spoke_cluster_cu-du-site.yaml
+  - 01_node_autolabeler_policy.yaml
+  - 02_node_autolabeler_placementbinding.yaml
+  - 03_node_autolabeler_placementrule.yaml
+  - cnfcu
+  - cnfdu

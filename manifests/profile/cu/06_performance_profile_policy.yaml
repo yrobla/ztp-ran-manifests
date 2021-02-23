@@ -1,0 +1,51 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: policy-config-performanceprofile-cu
+  namespace: profile-ran-subscriptions
+  annotations:
+    policy.open-cluster-management.io/standards: NIST SP 800-53
+    policy.open-cluster-management.io/categories: CM Configuration Management
+    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
+spec:
+  remediationAction: enforce
+  disabled: false
+  policy-templates:
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: policy-config-performanceprofile-cu
+        spec:
+          remediationAction: inform
+          severity: low
+          namespaceSelector:
+            exclude:
+              - kube-*
+            include:
+              - default
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: performance.openshift.io/v1
+                kind: PerformanceProfile
+                metadata:
+                  name: performance
+                spec:
+                  additionalKernelArgs:
+                    - nosmt
+                  cpu:
+                    isolated: "2-51"
+                    reserved: "0-1"
+                  hugepages:
+                    defaultHugepagesSize: 1G
+                    pages:
+                      - size: "1G"
+                        count: 16
+                        node: 0
+                  nodeSelector:
+                    node-role.kubernetes.io/worker-cu: ''
+                  numa:
+                    topologyPolicy: "restricted"
+                  realTimeKernel:
+                    enabled: false

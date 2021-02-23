@@ -1,0 +1,9 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-sctp-module-du
+  namespace: profile-ran-subscriptions
+spec:
+  clusterSelector:
+    matchExpressions:
+      - {key: profile, operator: In, values: [du]}

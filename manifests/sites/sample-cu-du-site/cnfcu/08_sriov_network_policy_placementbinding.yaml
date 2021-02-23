@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-cnfcu-sriov-network
+  namespace: sites-ran-subscriptions
+placementRef:
+  name: placement-policy-cnfcu-sriov-network
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-cnfcu-sriov-network
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
