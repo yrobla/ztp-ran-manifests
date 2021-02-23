@@ -2,7 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-sample-site-du-sriov-nnode-policy
-  namespace: sample-site-du-subscription
+  namespace: sites-ran-subscriptions
 placementRef:
   name: placement-sample-site-du-sriov-nnode-policy
   kind: PlacementRule

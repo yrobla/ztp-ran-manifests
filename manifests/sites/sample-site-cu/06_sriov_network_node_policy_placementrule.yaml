@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-sample-site-cu-sriov-nnode-policy
-  namespace: sample-site-cu-subscription
+  namespace: sites-ran-subscriptions
 spec:
   clusterSelector:
     matchExpressions:

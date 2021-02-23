@@ -2,7 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: sample-site-cu-sriov-nnode-policy
-  namespace: sample-site-cu-subscription
+  namespace: sites-ran-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management

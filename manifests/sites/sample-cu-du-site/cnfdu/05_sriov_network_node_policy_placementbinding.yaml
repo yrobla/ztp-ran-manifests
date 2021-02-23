@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-cnfdu-sriov-nnode-policy
+  namespace: sites-ran-subscriptions
+placementRef:
+  name: placement-cnfdu-sriov-nnode-policy
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: cnfdu-sriov-nnode-policy
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
