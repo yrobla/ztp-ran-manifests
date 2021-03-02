@@ -2,7 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-config-slave-ptp-du
-  namespace: profile-ran-subscriptions
+  namespace: sites-ran-subscriptions
 placementRef:
   name: placement-policy-config-slave-ptp-du
   kind: PlacementRule

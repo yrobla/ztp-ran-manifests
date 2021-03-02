@@ -1,13 +1,13 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-sample-cu-du-site-autolabeler
+  name: binding-policy-config-slave-ptp-du
   namespace: sites-ran-subscriptions
 placementRef:
-  name: placement-sample-cu-du-site-autolabeler
+  name: placement-policy-config-slave-ptp-du
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: sample-cu-du-site-autolabeler
+- name: policy-config-slave-ptp-du
   kind: Policy
   apiGroup: policy.open-cluster-management.io

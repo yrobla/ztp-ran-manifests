@@ -32,7 +32,7 @@ spec:
                 metadata:
                   labels:
                     machineconfiguration.openshift.io/role: worker-du
-                  name: load-sctp-module
+                  name: load-sctp-module-du
                 spec:
                   config:
                     ignition:

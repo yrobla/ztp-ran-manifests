@@ -10,12 +10,9 @@ resources:
   - 06_performance_profile_policy.yaml
   - 07_performance_profile_placementbinding.yaml
   - 08_performance_profile_placementrule.yaml
-  - 0900_ptp_operator_policy.yaml
-  - 0901_ptp_operator_placementbinding.yaml
-  - 0902_ptp_operator_placementrule.yaml
-  - 09_slave_ptp_policy.yaml
-  - 10_slave_ptp_placementbinding.yaml
-  - 11_slave_ptp_placementrule.yaml
+  - 09_ptp_operator_policy.yaml
+  - 10_ptp_operator_placementbinding.yaml
+  - 11_ptp_operator_placementrule.yaml
   - 12_sctp_module_policy.yaml
   - 13_sctp_module_placementbinding.yaml
   - 14_sctp_module_placementrule.yaml

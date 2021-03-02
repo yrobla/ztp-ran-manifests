@@ -1,9 +1,9 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-cnfcu-sriov-network
+  name: placement-policy-config-slave-ptp-du
   namespace: sites-ran-subscriptions
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: name, operator: In, values: ["sample-cu-du-site-cluster"]}
+      - {key: name, operator: In, values: ["sample-site-du-cluster"]}

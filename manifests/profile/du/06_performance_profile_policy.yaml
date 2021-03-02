@@ -30,7 +30,7 @@ spec:
                 apiVersion: performance.openshift.io/v1
                 kind: PerformanceProfile
                 metadata:
-                  name: performance
+                  name: performance-du
                 spec:
                   additionalKernelArgs:
                     - nosmt
@@ -48,4 +48,4 @@ spec:
                   numa:
                     topologyPolicy: "restricted"
                   realTimeKernel:
-                    enabled: true
+                    enabled: false
