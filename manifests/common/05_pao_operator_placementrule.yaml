@@ -6,4 +6,4 @@ metadata:
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: profile, operator: In, values: [cu, du]}
+      - {key: profile, operator: In, values: [cu, du, cu-du]}

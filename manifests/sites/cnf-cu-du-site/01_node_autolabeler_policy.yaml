@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: sample-site-cu-autolabeler
+  name: cnf-cu-du-site-autolabeler
   namespace: sites-ran-subscriptions
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
@@ -15,7 +15,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: sample-site-cu-autolabeler-config
+          name: cnf-cu-du-site-autolabeler-config
         spec:
           remediationAction: enforce # the policy-template spec.remediationAction is overridden by the preceding parameter value for spec.remediationAction.
           severity: low
@@ -32,6 +32,10 @@ spec:
                   namespace: node-autolabeler
                 data:
                   rules1.properties: |
-                    name: cnfcu.* # As example to label the node for cu profile
+                    name: cnfcu.* # As example to distingush between Nodes cnfcu ==> for CU and cnfdu ==> DU
                     labels:
                     - node-role.kubernetes.io/worker-cu
+                  rules2.properties: |
+                    name: cnfdu.* # As example to distingush between Nodes cnfcu ==> for CU and cnfdu ==> DU
+                    labels:
+                    - node-role.kubernetes.io/worker-du

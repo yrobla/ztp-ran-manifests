@@ -40,6 +40,8 @@ spec:
           namespaceSelector:
             exclude: ["kube-*"]
             include: ["*"]
+          nodeSelector:
+            node-role.kubernetes.io/worker-cu: ""
           object-templates:
             - complianceType: musthave
               objectDefinition:

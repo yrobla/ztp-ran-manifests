@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: sample-cu-du-site-cluster
+  name: cnf-cu-du-site-cluster
 ---
 apiVersion: cluster.open-cluster-management.io/v1
 kind: ManagedCluster
@@ -9,20 +9,20 @@ metadata:
   labels:
     cloud: auto-detect
     vendor: auto-detect
-    name: sample-cu-du-site-cluster
-    profile: cu
-  name: sample-cu-du-site-cluster
+    name: cnf-cu-du-site-cluster
+    profile: cu-du
+  name: cnf-cu-du-site-cluster
 spec:
   hubAcceptsClient: true
 ---
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: sample-cu-du-site-cluster
-  namespace: sample-cu-du-site-cluster
+  name: cnf-cu-du-site-cluster
+  namespace: cnf-cu-du-site-cluster
 spec:
-  clusterName: sample-cu-du-site-cluster
-  clusterNamespace: sample-cu-du-site-cluster
+  clusterName: cnf-cu-du-site-cluster
+  clusterNamespace: cnf-cu-du-site-cluster
   clusterLabels:
     cloud: auto-detect
     vendor: auto-detect

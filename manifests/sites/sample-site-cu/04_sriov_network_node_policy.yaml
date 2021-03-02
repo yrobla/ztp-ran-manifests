@@ -35,11 +35,11 @@ spec:
                   # For Mellanox please change to:
                   #     deviceType: netdevice
                   #     isRdma: true
-                  deviceType: vfio-pci
-                  isRdma: false
+                  deviceType: netdevice
+                  isRdma: true
                   nicSelector:
                     # The exact physical function name must match the hardware used    
-                    pfNames: ["ens1f0"]
+                    pfNames: ["ens5f0"]
                   nodeSelector:
                     node-role.kubernetes.io/worker-cu: ""
                   numVfs: 5
@@ -57,10 +57,10 @@ spec:
                 # For Mellanox please change to:
                 #     deviceType: netdevice
                 #     isRdma: true
-                  deviceType: vfio-pci
-                  isRdma: false
+                  deviceType: netdevice
+                  isRdma: true
                   nicSelector:
-                    pfNames: ["ens1f1"]
+                    pfNames: ["ens5f1"]
                   nodeSelector:
                     node-role.kubernetes.io/worker-cu: ""
                   numVfs: 5
@@ -78,10 +78,10 @@ spec:
                 # For Mellanox please change to:
                 #     deviceType: netdevice
                 #     isRdma: true
-                  deviceType: vfio-pci
-                  isRdma: false
+                  deviceType: netdevice
+                  isRdma: true
                   nicSelector:
-                    pfNames: ["ens3f0"]
+                    pfNames: ["ens7f0"]
                   nodeSelector:
                     node-role.kubernetes.io/worker-cu: ""
                   numVfs: 5
@@ -99,10 +99,10 @@ spec:
                 # For Mellanox please change to:
                 #     deviceType: netdevice
                 #     isRdma: true
-                  deviceType: vfio-pci
-                  isRdma: false
+                  deviceType: netdevice
+                  isRdma: true
                   nicSelector:
-                    pfNames: ["ens3f1"]
+                    pfNames: ["ens7f1"]
                   nodeSelector:
                     node-role.kubernetes.io/worker-cu: ""
                   numVfs: 5
