@@ -11,7 +11,7 @@ elif [ $PROFILE == "du" ]; then
   sed -i "s/sample-site-du/$CLUSTER_NAME/g" manifests/sites/${CLUSTER_NAME}/*
 elif [ $PROFILE == "cu-du" ]; then
   cp -rf manifests/sites/sample-cu-du-site manifests/sites/${CLUSTER_NAME}
-  sed -i "s/sample-cu-du-site/$CLUSTER_NAME/g" manifests/sites/${CLUSTER_NAME}/*
+  sed -i "s/cnf-cu-du-site/$CLUSTER_NAME/g" manifests/sites/${CLUSTER_NAME}/*
 else
   echo "Profile should match cu, du, cu-du . Profile=" $PROFILE
   exit 0
