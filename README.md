@@ -8,10 +8,10 @@ The purpose of this repository is to contain all the RAN manifests that is used 
     - Cluster_name (your cluster name)
     - Profile (which profile you want to include in your cluster: cu, du, cu-du )
 
-- After executing the site_gen.sh script you will find a directory created under the manifest/sites/{with_YOUR_CLUSTER_NAME}.
+- After executing the site_gen.sh script a directory will be created under the manifest/sites/{with_YOUR_CLUSTER_NAME}.
 
 - The CU and DU worker nodes will be labeled as [worker-cu, worker-du] based on worker node name prefix [cnfcu, cnfdu] defined at 01_node_autolabeler_policy.yaml
 
-- You need to modify 04_sriov_network_node_policy.yaml AND 07_sriov_network_policy.yaml under your new sites directory to match you worker nodes configurations.
+- Change the SR-IOV config in 04_sriov_network_node_policy.yaml AND 07_sriov_network_policy.yaml under the new site directory to match your worker nodes configurations.
 
-- Finally you need to upload the generated files to the ztp-ran-manifest repository you forked as we mentioned above.
+- Finally upload the generated files to the forked ztp-ran-manifest repository as we mentioned above.
