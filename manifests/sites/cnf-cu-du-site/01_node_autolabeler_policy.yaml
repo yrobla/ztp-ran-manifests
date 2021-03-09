@@ -32,10 +32,10 @@ spec:
                   namespace: node-autolabeler
                 data:
                   rules1.properties: |
-                    name: cnfcu.* # As example to distingush between Nodes cnfcu ==> for CU and cnfdu ==> DU
+                    name: cnfcu.* # As example to distinguish between Nodes cnfcu ==> for CU and cnfdu ==> DU
                     labels:
                     - node-role.kubernetes.io/worker-cu
                   rules2.properties: |
-                    name: cnfdu.* # As example to distingush between Nodes cnfcu ==> for CU and cnfdu ==> DU
+                    name: cnfdu.* # As example to distinguish between Nodes cnfcu ==> for CU and cnfdu ==> DU
                     labels:
                     - node-role.kubernetes.io/worker-du
