@@ -17,4 +17,10 @@ else
   exit 0
 fi
 
-echo "  - "$CLUSTER_NAME >> ./sites/kustomization.yaml
+kustom="./manifests/sites/kustomization.yaml"
+# Ensure a newline exists on last line in kustomization
+last_byte=$( tail -c 1 ${kustom} | xxd -ps )
+if [ ${last_byte:-error} != "0a" ] ; then
+    echo "" >> ${kustom}
+fi
+echo "  - "$CLUSTER_NAME >> ${kustom}
