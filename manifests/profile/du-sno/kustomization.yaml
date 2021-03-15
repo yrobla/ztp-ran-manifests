@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - 00_console_du_sno_policy.yaml
+  - 01_console_du_sno_placementbinding.yaml
+  - 02_console_du_sno_placementrule.yaml

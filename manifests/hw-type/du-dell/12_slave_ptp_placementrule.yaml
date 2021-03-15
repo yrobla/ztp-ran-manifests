@@ -1,0 +1,9 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-config-slave-ptp-du-dell
+  namespace: hw-type-ran-subscriptions
+spec:
+  clusterSelector:
+    matchExpressions:
+      - {key: hardwareType, operator: In, values: ["dell"]}

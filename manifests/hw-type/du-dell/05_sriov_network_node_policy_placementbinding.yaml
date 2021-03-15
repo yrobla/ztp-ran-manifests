@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-du-dell-sriov-nnode-policy
+  namespace: hw-type-ran-subscriptions
+placementRef:
+  name: placement-du-dell-sriov-nnode-policy
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: du-dell-sriov-nnode-policy
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io

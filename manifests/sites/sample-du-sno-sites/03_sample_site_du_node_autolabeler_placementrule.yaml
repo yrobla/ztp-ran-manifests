@@ -1,0 +1,9 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-sample-site-du-autolabeler
+  namespace: sites-ran-subscriptions
+spec:
+  clusterSelector:
+    matchExpressions:
+      - {key: name, operator: In, values: ["sample-du-sno-site1-cluster", "sample-du-sno-site2-cluster"]}

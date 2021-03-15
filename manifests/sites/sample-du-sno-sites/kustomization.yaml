@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - 00_spoke_cluster_sample_du-sno-site1_cluster.yaml
+  - 00_spoke_cluster_sample_du-sno-site2_cluster.yaml
+  - 01_sample_site_du_node_autolabeler_policy.yaml
+  - 02_sample_site_du_node_autolabeler_placementbinding.yaml
+  - 03_sample_site_du_node_autolabeler_placementrule.yaml
