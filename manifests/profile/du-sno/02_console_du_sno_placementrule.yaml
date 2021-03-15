@@ -1,9 +1,9 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-du-rt-kernel-policy
+  name: placement-policy-console-du-sno
   namespace: profile-ran-subscriptions
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: profile, operator: In, values: [du, cu-du, du-sno]}
+      - {key: profile, operator: In, values: [du-sno]}

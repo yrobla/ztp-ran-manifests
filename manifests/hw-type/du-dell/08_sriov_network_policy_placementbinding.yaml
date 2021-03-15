@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-du-dell-sriov-network
+  namespace: hw-type-ran-subscriptions
+placementRef:
+  name: placement-policy-du-dell-sriov-network
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-du-dell-sriov-network
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io
