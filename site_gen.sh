@@ -46,7 +46,7 @@ if [ ! -s ${kustom} ] ; then
 fi
 
 # Ensure a newline exists on last line in kustomization
-last_byte=$( tail -c 1 ${kustom} | xxd -ps )
+last_byte=$( tail -c 1 ${kustom} | od -An -tx1 )
 if [ ${last_byte:-error} != "0a" ] ; then
     echo "" >> ${kustom}
 fi
