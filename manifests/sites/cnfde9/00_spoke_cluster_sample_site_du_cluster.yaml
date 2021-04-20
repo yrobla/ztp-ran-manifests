@@ -11,7 +11,6 @@ metadata:
     vendor: auto-detect
     name: cnfde9-cluster
     profile: du
-    hardwareType: dell
   name: cnfde9-cluster
 spec:
   hubAcceptsClient: true
