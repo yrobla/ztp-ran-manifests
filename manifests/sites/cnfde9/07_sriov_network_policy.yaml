@@ -54,4 +54,4 @@ spec:
                     }
                   networkNamespace: mh-net-ns-site-1-fqdn-worker1
                   resourceName: mh_u_site_1_fqdn_worker1
-                  vlan: 200
+                  vlan: 100
